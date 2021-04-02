@@ -218,3 +218,4 @@ google.golang.org/protobuf/types/known/durationpb
 google.golang.org/protobuf/types/known/timestamppb
 # gopkg.in/yaml.v2 v2.3.0
 gopkg.in/yaml.v2
+# github.com/coreos/bbolt => go.etcd.io/bbolt v1.3.5

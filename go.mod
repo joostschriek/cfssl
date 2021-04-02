@@ -28,3 +28,6 @@ require (
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
 	google.golang.org/appengine v1.6.6 // indirect
 )
+
+// https://github.com/etcd-io/etcd/issues/11749#issuecomment-679189808
+replace github.com/coreos/bbolt => go.etcd.io/bbolt v1.3.5
