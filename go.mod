@@ -1,4 +1,4 @@
-module github.com/cloudflare/cfssl
+module github.com/joostschriek/cfssl
 
 go 1.14
 
@@ -7,6 +7,7 @@ require (
 	github.com/GeertJohan/go.rice v1.0.0
 	github.com/certifi/gocertifi v0.0.0-20180118203423-deb3ae2ef261 // indirect
 	github.com/cloudflare/backoff v0.0.0-20161212185259-647f3cdfc87a
+	github.com/cloudflare/cfssl v1.5.0
 	github.com/cloudflare/redoctober v0.0.0-20171127175943-746a508df14c
 	github.com/getsentry/raven-go v0.0.0-20180121060056-563b81fc02b7 // indirect
 	github.com/go-sql-driver/mysql v1.4.0
@@ -28,5 +29,3 @@ require (
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
 	google.golang.org/appengine v1.6.6 // indirect
 )
-
-replace github.com/cloudflare/cfssl => github.com/joostschriek/cfssl v1.5.0
