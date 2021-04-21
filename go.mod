@@ -1,4 +1,4 @@
-module github.com/joostschriek/cfssl
+module github.com/cloudflare/cfssl
 
 go 1.14
 
@@ -28,3 +28,5 @@ require (
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
 	google.golang.org/appengine v1.6.6 // indirect
 )
+
+replace github.com/cloudflare/cfssl => github.com/joostschriek/cfssl v1.5.0
