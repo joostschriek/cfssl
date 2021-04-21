@@ -320,7 +320,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		return
 	}
 	b64Body := base64.StdEncoding.EncodeToString(requestBody)
-	log.Debugf("Received OCSP request: %s", requestBody)
+	log.Debugf("Received OCSP request: %s", b64Body)
 	if request.Method == http.MethodPost {
 		le.Body = b64Body
 	}
@@ -336,7 +336,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 	//      should return unauthorizedRequest instead of malformed.
 	ocspRequest, err := ocsp.ParseRequest(requestBody)
 	if err != nil {
-		log.Debugf("Error decoding request body: %s", requestBody)
+		log.Debugf("Error decoding request body: %s", b64Body)
 		response.WriteHeader(http.StatusBadRequest)
 		response.Write(malformedRequestErrorResponse)
 		if rs.stats != nil {
@@ -344,7 +344,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		}
 		return
 	}
-	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.String())
+	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.Bytes())
 	le.IssuerKeyHash = fmt.Sprintf("%x", ocspRequest.IssuerKeyHash)
 	le.IssuerNameHash = fmt.Sprintf("%x", ocspRequest.IssuerNameHash)
 	le.HashAlg = hashToString[ocspRequest.HashAlgorithm]
@@ -354,7 +354,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 	if err != nil {
 		if err == ErrNotFound {
 			log.Infof("No response found for request: serial %x, request body %s",
-				ocspRequest.SerialNumber, requestBody)
+				ocspRequest.SerialNumber.String(), b64Body)
 			response.Write(unauthorizedErrorResponse)
 			if rs.stats != nil {
 				rs.stats.ResponseStatus(ocsp.Unauthorized)
@@ -362,7 +362,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 			return
 		}
 		log.Infof("Error retrieving response for request: serial %x, request body %s, error: %s",
-			ocspRequest.SerialNumber, requestBody, err)
+			ocspRequest.SerialNumber, b64Body, err)
 		response.WriteHeader(http.StatusInternalServerError)
 		response.Write(internalErrorErrorResponse)
 		if rs.stats != nil {
