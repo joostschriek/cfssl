@@ -21,11 +21,11 @@ import (
 	"regexp"
 	"time"
 
+	"github.com/jmhodges/clock"
 	"github.com/joostschriek/cfssl/certdb"
 	"github.com/joostschriek/cfssl/certdb/dbconf"
 	"github.com/joostschriek/cfssl/certdb/sql"
 	"github.com/joostschriek/cfssl/log"
-	"github.com/jmhodges/clock"
 	"golang.org/x/crypto/ocsp"
 )
 
@@ -106,7 +106,7 @@ func (src DBSource) Response(req *ocsp.Request) ([]byte, http.Header, error) {
 	log.Infof("trying to get all certs")
 	all, err := src.Accessor.GetOCSP("*", "*")
 	for _, r := range all {
-		log.Infof("OCSP Record boi: %s", r)
+		log.Infof("OCSP Record boi: %s", r.Serial)
 	}
 
 	log.Infof("Getting OCSP for serial %v and issuerhash %v", strSN, aki)
@@ -162,6 +162,8 @@ func NewSourceFromFile(responseFile string) (Source, error) {
 			log.Errorf("OCSP decode error %s on: %s", tmpErr, b64)
 			continue
 		}
+
+		log.Infof("Found %v", response.SerialNumber.String())
 
 		src[response.SerialNumber.String()] = der
 	}
@@ -352,7 +354,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		}
 		return
 	}
-	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.String())
+	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.Bytes())
 	le.IssuerKeyHash = fmt.Sprintf("%x", ocspRequest.IssuerKeyHash)
 	le.IssuerNameHash = fmt.Sprintf("%x", ocspRequest.IssuerNameHash)
 	le.HashAlg = hashToString[ocspRequest.HashAlgorithm]
@@ -389,8 +391,6 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		}
 		return
 	}
-
-	log.Debugf("Parsed response: %v", parsedResponse)
 
 	// Write OCSP response to response
 	response.Header().Add("Last-Modified", parsedResponse.ThisUpdate.Format(time.RFC1123))

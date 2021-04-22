@@ -24,8 +24,6 @@ import (
 	"math/big"
 	"strconv"
 	"time"
-
-	"github.com/joostschriek/cfssl/log"
 )
 
 var idPKIXOCSPBasic = asn1.ObjectIdentifier([]int{1, 3, 6, 1, 5, 5, 7, 48, 1, 1})
@@ -529,8 +527,6 @@ func ParseResponseForCert(bytes []byte, cert, issuer *x509.Certificate) (*Respon
 		ThisUpdate:         singleResp.ThisUpdate,
 		NextUpdate:         singleResp.NextUpdate,
 	}
-
-	log.Debugf("Possible response: %v", ret)
 
 	// Handle the ResponderID CHOICE tag. ResponderID can be flattened into
 	// TBSResponseData once https://go-review.googlesource.com/34503 has been
