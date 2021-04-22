@@ -102,6 +102,12 @@ func (src DBSource) Response(req *ocsp.Request) ([]byte, http.Header, error) {
 		log.Errorf("No DB Accessor")
 		return nil, nil, errors.New("called with nil DB accessor")
 	}
+
+	all, err := src.Accessor.GetOCSP("*", "*")
+	for _, r := range all {
+		log.Debugf("OCSP Record boi: %s", r)
+	}
+
 	records, err := src.Accessor.GetOCSP(strSN, aki)
 
 	// Response() logs when there are errors obtaining the OCSP response
