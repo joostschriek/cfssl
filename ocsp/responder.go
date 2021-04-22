@@ -108,6 +108,7 @@ func (src DBSource) Response(req *ocsp.Request) ([]byte, http.Header, error) {
 		log.Debugf("OCSP Record boi: %s", r)
 	}
 
+	log.Debugf("Getting OCSP for serial %v and issuerhash %v", strSN, aki)
 	records, err := src.Accessor.GetOCSP(strSN, aki)
 
 	// Response() logs when there are errors obtaining the OCSP response
