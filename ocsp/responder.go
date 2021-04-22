@@ -382,6 +382,8 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		return
 	}
 
+	log.Debugf("Parsed response: %v", parsedResponse)
+
 	// Write OCSP response to response
 	response.Header().Add("Last-Modified", parsedResponse.ThisUpdate.Format(time.RFC1123))
 	response.Header().Add("Expires", parsedResponse.NextUpdate.Format(time.RFC1123))
