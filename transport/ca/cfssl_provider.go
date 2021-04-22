@@ -9,13 +9,13 @@ import (
 	"net"
 	"path/filepath"
 
-	"github.com/cloudflare/cfssl/api/client"
-	"github.com/cloudflare/cfssl/auth"
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/info"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/transport/core"
+	"github.com/joostschriek/cfssl/api/client"
+	"github.com/joostschriek/cfssl/auth"
+	"github.com/joostschriek/cfssl/config"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/info"
+	"github.com/joostschriek/cfssl/signer"
+	"github.com/joostschriek/cfssl/transport/core"
 )
 
 type authError struct {
@@ -216,7 +216,7 @@ func (cap *CFSSL) SignCSR(csrPEM []byte) (cert []byte, err error) {
 	for i := range csr.URIs {
 		hosts = append(hosts, csr.URIs[i].String())
 	}
-	
+
 	sreq := &signer.SignRequest{
 		Hosts:   hosts,
 		Request: string(csrPEM),

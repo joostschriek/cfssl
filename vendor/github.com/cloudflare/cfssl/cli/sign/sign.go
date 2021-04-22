@@ -6,13 +6,13 @@ import (
 	"errors"
 	"io/ioutil"
 
-	"github.com/cloudflare/cfssl/certdb/dbconf"
-	certsql "github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/universal"
+	"github.com/joostschriek/cfssl/certdb/dbconf"
+	certsql "github.com/joostschriek/cfssl/certdb/sql"
+	"github.com/joostschriek/cfssl/cli"
+	"github.com/joostschriek/cfssl/config"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/signer"
+	"github.com/joostschriek/cfssl/signer/universal"
 
 	"github.com/jmoiron/sqlx"
 )

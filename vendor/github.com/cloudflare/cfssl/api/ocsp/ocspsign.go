@@ -10,11 +10,11 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/ocsp"
+	"github.com/joostschriek/cfssl/api"
+	"github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/ocsp"
 )
 
 // A Handler accepts requests with a certficate parameter

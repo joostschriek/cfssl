@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/cloudflare/cfssl/transport"
-	"github.com/cloudflare/cfssl/transport/core"
-	"github.com/cloudflare/cfssl/transport/example/exlib"
+	"github.com/joostschriek/cfssl/transport"
+	"github.com/joostschriek/cfssl/transport/core"
+	"github.com/joostschriek/cfssl/transport/example/exlib"
 )
 
 // maclient is a mutual-authentication client, meant to demonstrate

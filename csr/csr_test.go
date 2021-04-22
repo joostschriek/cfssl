@@ -12,8 +12,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/helpers"
 )
 
 //TestNew validate the CertificateRequest created to return with a KeyRequest

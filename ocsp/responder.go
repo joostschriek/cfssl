@@ -21,10 +21,10 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/certdb/dbconf"
-	"github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/log"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/certdb/dbconf"
+	"github.com/joostschriek/cfssl/certdb/sql"
+	"github.com/joostschriek/cfssl/log"
 	"github.com/jmhodges/clock"
 	"golang.org/x/crypto/ocsp"
 )

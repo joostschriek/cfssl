@@ -8,12 +8,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/crl"
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
+	"github.com/joostschriek/cfssl/api"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/crl"
+	"github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
 )
 
 // A Handler accepts requests with a serial number parameter

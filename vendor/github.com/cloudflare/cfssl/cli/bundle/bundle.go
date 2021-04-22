@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/cloudflare/cfssl/bundler"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/ubiquity"
+	"github.com/joostschriek/cfssl/bundler"
+	"github.com/joostschriek/cfssl/cli"
+	"github.com/joostschriek/cfssl/ubiquity"
 )
 
 // Usage text of 'cfssl bundle'

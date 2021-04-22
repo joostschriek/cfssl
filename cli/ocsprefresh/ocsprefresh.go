@@ -6,12 +6,12 @@ import (
 	"errors"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb/dbconf"
-	"github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/ocsp"
+	"github.com/joostschriek/cfssl/certdb/dbconf"
+	"github.com/joostschriek/cfssl/certdb/sql"
+	"github.com/joostschriek/cfssl/cli"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/ocsp"
 )
 
 // Usage text of 'cfssl ocsprefresh'

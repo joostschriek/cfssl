@@ -4,10 +4,10 @@ import (
 	"flag"
 	"time"
 
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/signer/universal"
+	"github.com/joostschriek/cfssl/config"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/signer/universal"
 )
 
 // Config is a type to hold flag values used by cfssl commands.
@@ -69,7 +69,7 @@ type Config struct {
 	AKI               string
 	DBConfigFile      string
 	CRLExpiration     time.Duration
-	Disable     	  string
+	Disable           string
 }
 
 // registerFlags defines all cfssl command flags and associates their values with variables.

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/helpers"
 )
 
 // Certificate represents a JSON description of an X.509 certificate.

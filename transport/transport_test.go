@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudflare/cfssl/api/client"
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/info"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/transport/core"
+	"github.com/joostschriek/cfssl/api/client"
+	"github.com/joostschriek/cfssl/csr"
+	"github.com/joostschriek/cfssl/info"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/transport/core"
 )
 
 var (

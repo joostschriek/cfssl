@@ -4,13 +4,13 @@ package crl
 import (
 	"os"
 
-	"github.com/cloudflare/cfssl/certdb/dbconf"
-	certsql "github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/crl"
-	cferr "github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
+	"github.com/joostschriek/cfssl/certdb/dbconf"
+	certsql "github.com/joostschriek/cfssl/certdb/sql"
+	"github.com/joostschriek/cfssl/cli"
+	"github.com/joostschriek/cfssl/crl"
+	cferr "github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
 
 	"github.com/jmoiron/sqlx"
 )

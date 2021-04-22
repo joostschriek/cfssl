@@ -21,8 +21,8 @@ import (
 
 	"golang.org/x/crypto/ocsp"
 
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
 )
 
 // HTTPClient is an instance of http.Client that will be used for all HTTP requests.

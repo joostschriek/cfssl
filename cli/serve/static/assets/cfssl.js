@@ -139,7 +139,7 @@
       }, [
         m('p', [
           'Code licensed under ',
-          m('a[href="https://github.com/cloudflare/cfssl/blob/master/LICENSE"]', 'BSD-2-Clause'),
+          m('a[href="https://github.com/joostschriek/cfssl/blob/master/LICENSE"]', 'BSD-2-Clause'),
           '.'
         ])
       ])
@@ -246,7 +246,7 @@
       return appWrapper([
         m('h1.page-header', Tformat('common.packages')),
         m('ul', [
-          m('li', m('a[href="https://github.com/cloudflare/cfssl/releases"]', 'Download binaries (GitHub)')),
+          m('li', m('a[href="https://github.com/joostschriek/cfssl/releases"]', 'Download binaries (GitHub)')),
           m('li', m('a[href="https://hub.docker.com/r/cloudflare/cfssl"]', 'Docker images')),
           m('li', m('a[href="https://pkg.cloudflare.com/"]', 'Install from apt or yum'))
         ])

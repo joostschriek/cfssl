@@ -1,7 +1,7 @@
 # CFSSL
 
 [![Build Status](https://travis-ci.org/cloudflare/cfssl.svg?branch=master)](https://travis-ci.org/cloudflare/cfssl)
-[![Coverage Status](http://codecov.io/github/cloudflare/cfssl/coverage.svg?branch=master)](http://codecov.io/github/cloudflare/cfssl?branch=master)
+[![Coverage Status](http://codecov.io/github/joostschriek/cfssl/coverage.svg?branch=master)](http://codecov.io/github/cloudflare/cfssl?branch=master)
 [![GoDoc](https://godoc.org/github.com/cloudflare/cfssl?status.svg)](https://godoc.org/github.com/cloudflare/cfssl)
 
 ## CloudFlare's PKI/TLS toolkit
@@ -64,7 +64,7 @@ Installation requires a
 [working Go 1.12+ installation](http://golang.org/doc/install).
 
 ```
-$ go get -u github.com/cloudflare/cfssl/cmd/cfssl
+$ go get -u github.com/joostschriek/cfssl/cmd/cfssl
 ```
 
 will download, build, and install the CFSSL tool.
@@ -73,7 +73,7 @@ To install any of the other utility programs that are
 in this repo (for instance `cfssljson` in this case):
 
 ```
-$ go get -u github.com/cloudflare/cfssl/cmd/cfssljson
+$ go get -u github.com/joostschriek/cfssl/cmd/cfssljson
 ```
 
 This will download, build, and install the CFSSLJSON tool.
@@ -81,7 +81,7 @@ This will download, build, and install the CFSSLJSON tool.
 And to simply install __all__ of the programs in this repo:
 
 ```
-$ go get -u github.com/cloudflare/cfssl/cmd/...
+$ go get -u github.com/joostschriek/cfssl/cmd/...
 ```
 
 This will download, build, and install all of the utility programs
@@ -353,7 +353,7 @@ for configuring and running the CA.
 verifying certificates. It can be installed with
 
 ```
-go get -u github.com/cloudflare/cfssl/cmd/mkbundle
+go get -u github.com/joostschriek/cfssl/cmd/mkbundle
 ```
 
 It takes a collection of certificates, checks for CRL revocation (OCSP

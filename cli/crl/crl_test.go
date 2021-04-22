@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/certdb/testdb"
-	"github.com/cloudflare/cfssl/cli"
-	"github.com/cloudflare/cfssl/helpers"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/certdb/sql"
+	"github.com/joostschriek/cfssl/certdb/testdb"
+	"github.com/joostschriek/cfssl/cli"
+	"github.com/joostschriek/cfssl/helpers"
 )
 
 var dbAccessor certdb.Accessor

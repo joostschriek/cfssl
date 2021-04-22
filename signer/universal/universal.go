@@ -5,13 +5,13 @@ import (
 	"crypto/x509"
 	"net/http"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/config"
-	cferr "github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/info"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/local"
-	"github.com/cloudflare/cfssl/signer/remote"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/config"
+	cferr "github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/info"
+	"github.com/joostschriek/cfssl/signer"
+	"github.com/joostschriek/cfssl/signer/local"
+	"github.com/joostschriek/cfssl/signer/remote"
 )
 
 // Signer represents a universal signer which is both local and remote

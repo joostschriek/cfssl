@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
+	"github.com/joostschriek/cfssl/certdb"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
 )
 
 // NewCRLFromFile takes in a list of serial numbers, one per line, as well as the issuing certificate

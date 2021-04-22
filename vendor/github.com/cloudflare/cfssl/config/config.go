@@ -14,11 +14,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/auth"
-	cferr "github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/cloudflare/cfssl/log"
-	ocspConfig "github.com/cloudflare/cfssl/ocsp/config"
+	"github.com/joostschriek/cfssl/auth"
+	cferr "github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/helpers"
+	"github.com/joostschriek/cfssl/log"
+	ocspConfig "github.com/joostschriek/cfssl/ocsp/config"
+
 	// empty import of zlint/v2 required to have lints registered.
 	_ "github.com/zmap/zlint/v2"
 	"github.com/zmap/zlint/v2/lint"

@@ -11,14 +11,14 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/cloudflare/cfssl/api"
-	"github.com/cloudflare/cfssl/bundler"
-	"github.com/cloudflare/cfssl/config"
-	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/errors"
-	"github.com/cloudflare/cfssl/log"
-	"github.com/cloudflare/cfssl/signer"
-	"github.com/cloudflare/cfssl/signer/universal"
+	"github.com/joostschriek/cfssl/api"
+	"github.com/joostschriek/cfssl/bundler"
+	"github.com/joostschriek/cfssl/config"
+	"github.com/joostschriek/cfssl/csr"
+	"github.com/joostschriek/cfssl/errors"
+	"github.com/joostschriek/cfssl/log"
+	"github.com/joostschriek/cfssl/signer"
+	"github.com/joostschriek/cfssl/signer/universal"
 )
 
 const (
