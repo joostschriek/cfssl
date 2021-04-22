@@ -103,12 +103,13 @@ func (src DBSource) Response(req *ocsp.Request) ([]byte, http.Header, error) {
 		return nil, nil, errors.New("called with nil DB accessor")
 	}
 
+	log.Infof("trying to get all certs")
 	all, err := src.Accessor.GetOCSP("*", "*")
 	for _, r := range all {
-		log.Debugf("OCSP Record boi: %s", r)
+		log.Infof("OCSP Record boi: %s", r)
 	}
 
-	log.Debugf("Getting OCSP for serial %v and issuerhash %v", strSN, aki)
+	log.Infof("Getting OCSP for serial %v and issuerhash %v", strSN, aki)
 	records, err := src.Accessor.GetOCSP(strSN, aki)
 
 	// Response() logs when there are errors obtaining the OCSP response
