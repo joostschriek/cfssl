@@ -344,7 +344,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 		}
 		return
 	}
-	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.Bytes())
+	le.Serial = fmt.Sprintf("%x", ocspRequest.SerialNumber.String())
 	le.IssuerKeyHash = fmt.Sprintf("%x", ocspRequest.IssuerKeyHash)
 	le.IssuerNameHash = fmt.Sprintf("%x", ocspRequest.IssuerNameHash)
 	le.HashAlg = hashToString[ocspRequest.HashAlgorithm]
@@ -362,7 +362,7 @@ func (rs Responder) ServeHTTP(response http.ResponseWriter, request *http.Reques
 			return
 		}
 		log.Infof("Error retrieving response for request: serial %x, request body %s, error: %s",
-			ocspRequest.SerialNumber, b64Body, err)
+			ocspRequest.SerialNumber.String(), b64Body, err)
 		response.WriteHeader(http.StatusInternalServerError)
 		response.Write(internalErrorErrorResponse)
 		if rs.stats != nil {
